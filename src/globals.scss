@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s; 
+}
+
+:root{
+    --theme-color: #4F4557;
+
+    --dk-theme-background: #25242A;
+    --dk-theme-background-soft: #393646;
+    --dk-color-theme: #56FAF0;
+    --dk-subtext-color: #7D7D7D;
+
+    --theme-background: #F4EEE0;
+    --theme-background-soft: white;
+    --color-theme: #594671;
+    --subtext-color: #25242A;
+
+    --redhat: "Red Hat Display", sans-serif;
+    --DMsans: "DM Sans", sans-serif;
+}
+
+body{
+    font-family: var(--redhat);
+    background: var(--theme-background) ;
+    overflow-x: hidden;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    &:hover{
+        opacity: 0.5;
+    }
+}
+button{
+    cursor: pointer;
+}
+
+@keyframes ItemFadeInRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes FadeInTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

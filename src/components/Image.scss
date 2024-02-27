@@ -1,0 +1,34 @@
+.imageCard{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    &:hover img{
+      filter: brightness(0.3) grayscale(1);
+    }
+    &:hover .information {
+      opacity: 1;
+    }
+
+    img{
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+    }
+    .information{
+      position: absolute;
+      opacity: 0;
+      width: 80%;
+      color: white;
+      h4{
+        font-size: 28px;
+      }
+      span{
+        font-size: 14px;
+        color: rgb(163, 163, 163);
+      }
+    }
+  }

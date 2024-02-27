@@ -1,0 +1,164 @@
+@import 'mixins';
+
+.App{
+  @include flex-center-column;
+}
+
+main{
+  max-width: 1900px;
+  width: 100%;
+
+  .land-info{
+      display: flex;
+      height: 670px;
+      position: relative;
+
+      div{
+          width: 50%;
+          position: relative;
+          
+          .my-image, .vetor{
+            max-width: 600px;
+            width: 50dvw;
+            position: absolute;
+            bottom: 0;
+          }
+
+          .vetor{
+              left: -140px;
+              z-index: -10;
+          }
+
+          h2{
+              margin-top: 100px;
+              color: var(--subtext-color);
+              font-size: 32px;
+              font-weight: 500;
+              animation: ItemFadeInRight 1s;
+          }
+          h1{
+              font-size: 44px;
+              font-weight: 600;
+              margin-bottom: 30px;
+              width: 510px;
+              animation: ItemFadeInRight 2s;
+          }
+          p{
+              color: var(--color-theme);
+              padding-bottom: 60px;
+              width: 510px;
+          }
+      }
+      ul {
+          position: absolute;
+          bottom: 100px;
+          right: 50px;
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          gap: 20px;
+        
+          li {
+            margin-bottom: 10px;
+        
+            a {
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              font-size: 24px;
+              color: black;
+        
+              &:hover {
+                opacity: 1;
+        
+                svg {
+                  margin-left: 15px;
+                }
+        
+                span {
+                  max-width: 200px;
+                  padding: 5px 20px;
+                }
+              }
+        
+              svg {
+                transition: margin 0.3s ease-in-out;
+              }
+        
+              span {
+                display: inline-block;
+                max-width: 0;
+                overflow: hidden;
+                transition: max-width 0.3s ease-in-out, padding 0.3s ease-in-out; 
+                white-space: nowrap;
+                margin-right: 10px;
+                background: var(--dk-theme-background-soft);
+                color: white;
+                font-size: 18px;
+                padding: 0 0; 
+              }
+            }
+          }
+        }
+  }
+
+    section{
+        width: 100%;
+        background-color: white;
+        position: relative;
+        bottom: 5px;
+        padding: 50px;
+
+        h1{
+            text-align: center;
+            font-size: 36px;
+            font-family: var(--DMsans);
+            letter-spacing: 8px;
+            font-weight: 500;
+            padding: 60px 0px 60px;
+        }
+
+        p:hover{
+          opacity: 0.7;
+        }
+
+        .cards{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 70px;
+        }
+
+        .langs{
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0px 2%;
+
+            .card{
+              width: 250px;
+              height: 230px;
+
+              hr{
+                display: none;
+              }
+            }
+        }
+    }
+}
+
+.gallery{
+  width: 100%;
+
+  .menu{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .images{
+    display: flex;
+    padding: 15dvh 50px 200px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    p{font-size: 28px; text-align: center; width: 100%; padding-top: 50px;}
+  }
+}
