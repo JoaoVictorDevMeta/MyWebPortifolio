@@ -1,3 +1,4 @@
+@import '../mixins';
 footer {
     background-color: var(--dk-theme-background-soft);
     min-height: 450px;
@@ -80,6 +81,14 @@ footer {
                     }
                 }
             }
+        }
+    }
+
+    @include responsive(smartphone-portrait){
+        .row-top{
+            .info{width: 100%;}
+            .send-mail{width: 100%; min-width: 0px; padding-top: 40px;}
+            .contact{padding-top: 40px;}
         }
     }
   

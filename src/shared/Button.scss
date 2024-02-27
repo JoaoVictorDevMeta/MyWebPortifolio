@@ -1,8 +1,12 @@
+@import '../mixins';
+
 .button {
     border-radius: 100px;
     font-size: 20px;
     border: 2px solid white;
     font-family: var(--DMsans);
+    width: var(--width);
+    height: var(--height);
   
     &.primary {
       background: none;
@@ -26,6 +30,18 @@
         &:disabled, &:active {
             background: none;
             color: var(--dk-subtext-color);
+        }
+    }
+
+    @include responsive(smartphone-portrait){
+        font-size: 16px;
+        width: 100px;
+        height: 40px;
+
+        &.secondary {
+            font-size: 18px;
+            width: 200px;
+            height: 50px;
         }
     }
 }

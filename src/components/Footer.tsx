@@ -1,5 +1,3 @@
-import React from 'react'
-
 import './Footer.scss';
 import Mailer from './Mailer';
 

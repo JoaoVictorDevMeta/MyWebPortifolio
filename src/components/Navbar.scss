@@ -1,3 +1,5 @@
+@import '../mixins';
+
 nav{
     height: 22vh;
     width: 100%;
@@ -21,6 +23,15 @@ nav{
             a{
                 color: black;
                 font-size: 20px;
+            }
+        }
+    }
+
+    @include responsive(smartphone-portrait){
+        flex-direction: column;
+        ul{ gap: 50px;
+            li{
+                a{font-size: 16px;}
             }
         }
     }

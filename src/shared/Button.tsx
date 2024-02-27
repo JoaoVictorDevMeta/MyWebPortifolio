@@ -12,9 +12,9 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ onClick, disabled = false, variant = 'primary', children, width, height }) => {
   const style = {
-    width: width,
-    height: height,
-  };
+    '--width': width,
+    '--height': height,
+  } as React.CSSProperties;
 
   return (
     <button className={`button ${variant}`} onClick={onClick} disabled={disabled} style={style}>
