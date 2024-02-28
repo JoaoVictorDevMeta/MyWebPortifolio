@@ -38,18 +38,18 @@ function Home() {
           <div className='land-text'>
             <h2>Olá. Sou o João Victor  </h2>
             <h1>Entusiasta de Desenhos & Desenvolvimento</h1>
-            <p> These are the 40 best free web fonts available on Google Fonts, in my humble opinion. They are all open-source and 100% free for commercial use. </p>
+            <p>Cursando Informática no IFPB eu, João Victor, estou disposto a trazer inovação para o mundo. Procuro sempre aprender algo novo, isso que me encanta no mundo da tecnologia.</p>
             <Button variant="secondary" onClick={executeScroll} width="260px" height="60px">Veja os trabalhos</Button>
           </div>
           <ul className='social-media'>
             <li>
-              <a href=""><span>linkedin</span><FaLinkedin /></a>
+              <a href="https://www.linkedin.com/in/joaovictordevmeta/" target='_black'><span>linkedin</span><FaLinkedin /></a>
             </li>
             <li>
               <a href="https://www.instagram.com/joaovictorgr/" target='_black'><span>@joaovictorgr</span><FaInstagram /></a>
             </li>
             <li>
-              <a href="https://github.com/XxcasadaslayerxX" target='_black'><span>XxcasadaslayerxX</span><FaGithub /></a>
+              <a href="https://github.com/JoaoVictorDevMeta" target='_black'><span>XxcasadaslayerxX</span><FaGithub /></a>
             </li>
           </ul>
         </div>
@@ -58,7 +58,7 @@ function Home() {
           <h1>SERVIÇOS</h1>
 
           <div className='cards'>
-            <Card title="Front-End" description="Description" Icon={FaReact} image={null} link="" />
+            <Card title="Front-End" description="Desde de FrameWorks como o React até o HTML puro" Icon={FaReact} image={null} link="" />
             <Card title="Desenhos ou Artes" description="Description" Icon={GiPencilBrush} image={null} link="" />
             <Card title="Back-End" description="Description" Icon={FaNodeJs} image={null} link="" />
           </div>
@@ -74,15 +74,15 @@ function Home() {
           <h1>LINGUAGENS E FRAMEWORKS</h1>
 
           <div className='cards langs'>
-            <Card title="HTML" description="1 Year Experience" Icon={FaHtml5} image={null} link="" />
-            <Card title="CSS" description="1 Year Experience" Icon={FaCss3} image={null} link="" />
-            <Card title="Javascript" description="1 Year Experience" Icon={IoLogoJavascript} image={null} link="" />
-            <Card title="Python" description="1 Year Experience" Icon={FaPython} image={null} link="" />
-            <Card title="Node.js" description="6 Months Experience" Icon={FaNodeJs} image={null} link="" />
-            <Card title="React" description="6 Months Experience" Icon={FaReact} image={null} link="" />
-            <Card title="SQLite" description="6 Months Experience" Icon={SiSqlite} image={null} link="" />
-            <Card title="MongoDB" description="6 Months Experience" Icon={SiMongodb} image={null} link="" />
-            <Card title="ExpressJs" description="6 Months Experience" Icon={SiExpress} image={null} link="" />
+            <Card title="HTML" description="1 Ano de Experiencia" Icon={FaHtml5} image={null} link="" />
+            <Card title="CSS" description="1 Ano de Experiencia" Icon={FaCss3} image={null} link="" />
+            <Card title="Javascript" description="1 Ano de Experiencia" Icon={IoLogoJavascript} image={null} link="" />
+            <Card title="Python" description="1 Ano de Experiencia" Icon={FaPython} image={null} link="" />
+            <Card title="Node.js" description="6 meses de Experiencia" Icon={FaNodeJs} image={null} link="" />
+            <Card title="React" description="6 meses de Experiencia" Icon={FaReact} image={null} link="" />
+            <Card title="SQLite" description="6 meses de Experiencia" Icon={SiSqlite} image={null} link="" />
+            <Card title="MongoDB" description="6 meses de Experiencia" Icon={SiMongodb} image={null} link="" />
+            <Card title="ExpressJs" description="6 meses de Experiencia" Icon={SiExpress} image={null} link="" />
           </div>
 
           <h1

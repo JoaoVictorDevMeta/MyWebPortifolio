@@ -1,5 +1,10 @@
 import emailjs from 'emailjs-com';
 import { useForm, SubmitHandler } from "react-hook-form";
+import { database } from '../firebase';
+import { ref, get, set } from 'firebase/database';
+import { useEffect } from 'react';
+import { publicIpv4 } from 'public-ip';
+import Swal from 'sweetalert2'
 
 import Button from "../shared/Button";
 
@@ -7,30 +12,68 @@ type Inputs = {
     from_name: string;
     from_email: string;
     message: string;
+    ip_address: string;
 }
 
 function Mailer() {
-    const serviceId='service_0o0cnrw';
-    const templateId='template_wop7vhi';
-    const publicKey="XyJ2qDDQiX0FrHzGF";
+    const serviceId = import.meta.env.VITE_APP_SERVICE_ID;
+    const templateId = import.meta.env.VITE_APP_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
 
     const {
         register,
         handleSubmit,
         formState: { errors, isValid },
+        setValue
     } = useForm<Inputs>({
         mode: "onBlur",
     })
 
-    const onSubmit: SubmitHandler<Inputs> = (_, e) => {
-        if (e) {
-            emailjs.sendForm(serviceId, templateId, e.target as HTMLFormElement, publicKey)
-            .then((result) => {
-                console.log(result)
-            }, (error) => {
-                console.log(error)
-            })
-        }
+    useEffect(() => {
+        publicIpv4().then(ip => {
+            setValue('ip_address', ip);
+        });
+    }, [setValue]);
+
+    const onSubmit: SubmitHandler<Inputs> = (data, e) => {
+        const ip_address = data.ip_address.replace(/\./g, '_');
+        const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+        const reference = ref(database, `emails/${ip_address}`)
+        
+        get(reference).then((snapshot) => {
+            const emailTimestamps = snapshot.val() || [];
+            const recentEmailTimestamps = emailTimestamps.filter((timestamp: number) => timestamp > oneWeekAgo);
+
+            if (recentEmailTimestamps.length < 2) {
+                if (e) {
+                    emailjs.sendForm(serviceId, templateId, e.target as HTMLFormElement, publicKey)
+                    .then(() => {
+                        recentEmailTimestamps.push(Date.now());
+                        set(reference, recentEmailTimestamps);
+
+                        Swal.fire({
+                            title: 'Obrigado pelo Contato',
+                            text: 'tentarei responder sua mensagem o mais breve possivel',
+                            icon: 'success',
+                            confirmButtonText: 'Ok, entendi'
+                        })
+                    }, () => {
+                        Swal.fire({
+                            title: 'Algo deu errado',
+                            icon: 'error',
+                            confirmButtonText: 'Vou entrar em contato por outro método!'
+                        })
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: 'Você ja enviou muitos emails!',
+                    text: 'Esse limite é uma medida necessaria para o controle de envio, evitando spams',
+                    icon: 'error',
+                    confirmButtonText: 'Ok, entendi'
+                })
+            }
+        });
     }
 
   return (

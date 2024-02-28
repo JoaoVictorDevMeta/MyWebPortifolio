@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/gallery",
     element: <Gallery/>
+  },
+  {
+    path: "/contact",
+    element: <Contact/>
   }
 ]);
 

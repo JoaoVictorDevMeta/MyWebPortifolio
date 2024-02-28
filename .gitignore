@@ -27,6 +27,5 @@ dist-ssr
 .firebaserc
 dist
 .firebase
-firebase.json
 firestore.*
 storage.*

@@ -13,7 +13,9 @@ function Navbar() {
                 <a href="/gallery">Galeria</a>
             </li>
             <li>
-                <Button variant="primary" width="200px" height="50px">Contato</Button>
+                <a href="/contact">
+                    <Button variant="primary" width="200px" height="50px">Contato</Button>
+                </a>
             </li>
         </ul>
     </nav>
