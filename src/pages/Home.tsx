@@ -38,7 +38,7 @@ function Home() {
           <div className='land-text'>
             <h2>Olá. Sou o João Victor  </h2>
             <h1>Entusiasta de Desenhos & Desenvolvimento</h1>
-            <p>Cursando Informática no IFPB eu, João Victor, estou disposto a trazer inovação para o mundo. Procuro sempre aprender algo novo, isso que me encanta no mundo da tecnologia.</p>
+            <p>Cursando Informática no IFPB eu Full-Stack Developer Junior, João Victor, estou disposto a trazer inovação para o mundo. Procuro sempre aprender algo novo, isso que me encanta no mundo da tecnologia.</p>
             <Button variant="secondary" onClick={executeScroll} width="260px" height="60px">Veja os trabalhos</Button>
           </div>
           <ul className='social-media'>

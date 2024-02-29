@@ -31,6 +31,7 @@ function Gallery() {
   const filteredItems = items.filter(item => filter === 'all' ? true : item.favorite);
 
   return (
+    <main>
     <div className='gallery'>
       <div className='menu'>
         <h3
@@ -50,6 +51,7 @@ function Gallery() {
         {filteredItems.length === 0 ? <p>Nenhuma imagem encontrada</p> : <p>Obrigado pela Atenção!</p>}
       </div>
     </div>
+    </main>
   )
 }
 

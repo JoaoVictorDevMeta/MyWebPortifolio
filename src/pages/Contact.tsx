@@ -5,6 +5,7 @@ import vector from '../assets/Vector 1 (1).png';
 
 function Contact() {
   return (
+    <main>
     <div className='contact'>
       <div className='image'>
         <img src={myImage} alt="DesenhoDaMinhaPessoa" className='my-image' />
@@ -16,6 +17,7 @@ function Contact() {
         </div>
       </div>
     </div>
+    </main>
   )
 }
 
