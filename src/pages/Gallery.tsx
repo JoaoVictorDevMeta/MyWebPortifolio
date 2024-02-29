@@ -47,7 +47,7 @@ function Gallery() {
           return <Image item={item} key={item.id}/>
         })}
 
-        {filteredItems.length === 0 ? <p>Nenhuma imagem encontrada</p> : <p>Aqui acabam os desenhos</p>}
+        {filteredItems.length === 0 ? <p>Nenhuma imagem encontrada</p> : <p>Obrigado pela Atenção!</p>}
       </div>
     </div>
   )

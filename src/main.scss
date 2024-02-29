@@ -125,9 +125,7 @@ main{
         padding: 50px;
         @include responsive(smartphone-portrait){
           padding: 0px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          @include flex-center-column;
         }
         
 
@@ -180,6 +178,10 @@ main{
   .menu{
     display: flex;
     justify-content: space-around;
+
+    @include responsive(smartphone-portrait){flex-direction: column;
+      align-items: center;
+      gap: 30px;}
   }
 
   .images{
@@ -189,5 +191,72 @@ main{
     flex-wrap: wrap;
 
     p{font-size: 28px; text-align: center; width: 100%; padding-top: 50px;}
+  }
+}
+
+.contact{
+  display: flex;  
+  position: relative;
+  width: 100%;
+
+  .image{
+    width: 50%;
+    img{
+      width: 60%;
+      max-width: 650px;
+      position: absolute;
+      bottom: 0;
+    }
+    .vetor{
+      position: absolute;
+      bottom: -10px;
+      left: -100px;
+      z-index: -1;
+      width: 50%;
+    }
+  }
+
+  .contact-form{
+    width: 50%;
+    height: 80vh;
+    .send-mail{
+      width: 100%;
+      min-width: none;
+      height: 100%;
+      .mailer{
+        height: 100%;
+        @include flex-center-column;
+        justify-content: center;
+        gap: 30px;
+        animation: ItemFadeInRight 1s;
+
+        input, textarea{
+          width: 100%;
+          border-bottom: 2px solid var(--color-theme);
+          color: black;
+        }
+        .input{width: 100%;}
+        .small{width: 100%;}
+        .fields{
+          max-width: 400px;
+        }
+      }
+    }
+
+    form{
+      padding: 50px;
+      @include flex-center-column;
+    }
+  }
+
+  @include responsive(smartphone-portrait){
+    .image{display: none;}
+    .contact-form{width: 100%; height: fit-content; padding-top: 40px;
+      .send-mail{min-width: 0;
+        form{
+          padding: 10px 0px 50px;
+        }
+      }
+    }
   }
 }

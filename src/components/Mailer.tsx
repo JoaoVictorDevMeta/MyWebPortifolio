@@ -2,11 +2,13 @@ import emailjs from 'emailjs-com';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { database } from '../firebase';
 import { ref, get, set } from 'firebase/database';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { publicIpv4 } from 'public-ip';
 import Swal from 'sweetalert2'
 
 import Button from "../shared/Button";
+
+import './Mailer.scss'
 
 type Inputs = {
     from_name: string;
@@ -15,10 +17,11 @@ type Inputs = {
     ip_address: string;
 }
 
-function Mailer() {
+function Mailer({variant}: {variant: string}) {
     const serviceId = import.meta.env.VITE_APP_SERVICE_ID;
     const templateId = import.meta.env.VITE_APP_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
+    const [loading, setLoading] = useState(false);
 
     const {
         register,
@@ -39,6 +42,7 @@ function Mailer() {
         const ip_address = data.ip_address.replace(/\./g, '_');
         const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
         const reference = ref(database, `emails/${ip_address}`)
+        setLoading(true);
         
         get(reference).then((snapshot) => {
             const emailTimestamps = snapshot.val() || [];
@@ -57,12 +61,14 @@ function Mailer() {
                             icon: 'success',
                             confirmButtonText: 'Ok, entendi'
                         })
+                        setLoading(false);
                     }, () => {
                         Swal.fire({
                             title: 'Algo deu errado',
                             icon: 'error',
                             confirmButtonText: 'Vou entrar em contato por outro método!'
                         })
+                        setLoading(false);
                     });
                 }
             } else {
@@ -72,12 +78,13 @@ function Mailer() {
                     icon: 'error',
                     confirmButtonText: 'Ok, entendi'
                 })
+                setLoading(false);
             }
         });
     }
 
   return (
-    <div>
+    <div className='mailer'>
         <p>Mande um email para mim!</p>
         <form
             onSubmit={handleSubmit(onSubmit)}
@@ -109,10 +116,10 @@ function Mailer() {
             </div>
             <Button 
                 disabled={!isValid} 
-                variant="submit" 
+                variant={variant as 'primary' | 'secondary' | 'submit' | undefined} 
                 width="200px" 
                 height="50px"
-            >Enviar</Button>
+            >{loading ? "Enviando..." : "Enviar"}</Button>
         </form>
     </div>
   )

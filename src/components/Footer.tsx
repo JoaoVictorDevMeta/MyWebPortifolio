@@ -11,11 +11,13 @@ function Footer() {
                 <p>Portifolio para divulgação de trabalho e habilidades prospostas para um contexto de mercado de trabalho.</p>
             </div>
             <div className='send-mail'>
-                <Mailer/>
+                <Mailer variant='submit'/>
             </div>
             <div className='info contact'>
                 <h3>Meu Contato</h3>
                 <h4>83 99196 1041</h4>
+                <h3>Meu Email</h3>
+                <h4>joaovictorgouveiar@gmail.com</h4>
             </div>
         </div>
         <div className='row-bottom'>

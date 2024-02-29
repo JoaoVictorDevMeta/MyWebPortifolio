@@ -1,0 +1,51 @@
+.send-mail {
+    width: 60%;
+    min-width: 600px;
+    padding: 0px 60px 20px;
+
+    p { text-align: center; font-size: 28px; font-weight: 300; padding-bottom: 10px; }
+
+    form {
+        .fields { display: flex; flex-wrap: wrap; }
+        .small { margin-right: 20px; }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            min-width: 280px;
+            padding-bottom: 40px;
+            position: relative;
+
+            span {
+                bottom: 20px;
+                position: absolute;
+                color: rgb(244, 153, 153);
+            }
+
+            label {
+                color: var(--dk-subtext-color);
+                font-size: 20px;
+            }
+
+            input, textarea {
+                background: none;
+                border: none;
+                color: white;
+                border-bottom: 2px solid;
+                padding: 5px;
+                font-size: 16px;
+    
+                &:focus {
+                    outline: none;
+                    border-bottom: 2px solid var(--color-theme);
+                }
+            }
+
+            textarea {
+                resize: none;
+                min-height: 80px;
+                height: 83%;
+            }
+        }
+    }
+}

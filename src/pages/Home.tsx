@@ -58,9 +58,9 @@ function Home() {
           <h1>SERVIÇOS</h1>
 
           <div className='cards'>
-            <Card title="Front-End" description="Desde de FrameWorks como o React até o HTML puro" Icon={FaReact} image={null} link="" />
-            <Card title="Desenhos ou Artes" description="Description" Icon={GiPencilBrush} image={null} link="" />
-            <Card title="Back-End" description="Description" Icon={FaNodeJs} image={null} link="" />
+            <Card title="Front-End" description="Desde de Frameworks como o React até o HTML puro" Icon={FaReact} image={null} link="" />
+            <Card title="Desenhos ou Artes" description="Faço desenhos no papel e digitais, sou bem maleável em estilo" Icon={GiPencilBrush} image={null} link="" />
+            <Card title="Back-End" description="Utilizo das melhores ferramentes para garantir um ótimo resultado" Icon={FaNodeJs} image={null} link="" />
           </div>
 
           <h1 ref={myWorks}>MEU TRABALHO</h1>
