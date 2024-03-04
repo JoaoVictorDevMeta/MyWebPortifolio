@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Projects/>
+  },
+  {
+    path: "/about",
+    element: <About/>
   }
 ]);
 

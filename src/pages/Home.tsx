@@ -49,7 +49,7 @@ function Home() {
               <a href="https://www.instagram.com/joaovictorgr/" target='_black'><span>@joaovictorgr</span><FaInstagram /></a>
             </li>
             <li>
-              <a href="https://github.com/JoaoVictorDevMeta" target='_black'><span>XxcasadaslayerxX</span><FaGithub /></a>
+              <a href="https://github.com/JoaoVictorDevMeta" target='_black'><span>JoaoVictorDevMeta</span><FaGithub /></a>
             </li>
           </ul>
         </div>
